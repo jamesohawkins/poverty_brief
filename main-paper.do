@@ -992,7 +992,7 @@ drop if asecwt < 0																// negative weights incompatible with pw optio
 // Generating counterfactual resource and poverty variables without certain
 // government assistance
 * pre-tax/transfer
-gen pre_res = SPMu_Resources2 - [SPMu_SNAPSub - SPMu_CapHouseSub - SPMu_SchLunch - SPMu_EngVal - SPMu_WICval - SPMu_Stimulus - SPMu_FedEcRecov - SPMu_FedTax - SPMu_FICA - SPMu_stTax - SPMu_Welf - SPMu_SSI - SPMu_SS - SPMu_UE2]
+gen pre_res = SPMu_Resources2 - SPMu_SNAPSub - SPMu_CapHouseSub - SPMu_SchLunch - SPMu_EngVal - SPMu_WICval - SPMu_Stimulus - SPMu_FedEcRecov + SPMu_FedTax + SPMu_FICA + SPMu_stTax - SPMu_Welf - SPMu_SSI - SPMu_SS - SPMu_UE2
 gen pre_pov = (pre_res < SPMu_PovThreshold1_cen_Metadj)
 
 * pre-eitc
